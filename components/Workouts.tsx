@@ -29,6 +29,7 @@ const Workouts = async() => {
     console.log(workoutData, "Workouts")
     return (
         <div >
+            <section id="library">
             <div className='px-10'>
             <h2><span className='text-white font-bold text-3xl'>THE LIBRARY</span></h2>
             <p><span className='text-gray-300 mb-4'>Twelve lifts covering every major muscle group.</span></p> </div>
@@ -39,7 +40,7 @@ const Workouts = async() => {
           workout={workout}
         />
       ))}
-    </div> </div>
+    </div> </section></div> 
         
     );
 };
