@@ -5,7 +5,7 @@ const hero = () => {
     
     return (
   <div className="px-4 sm:px-6 lg:px-10 mt-4 mb-4">
-    <div className="flex flex-col md:flex-row justify-between items-stretch bg-[#15171D] rounded-3xl overflow-hidden">
+    <div className="flex flex-col md:flex-row justify-between items-center bg-[#15171D] rounded-3xl overflow-hidden">
       
      
       <div className="flex flex-col justify-center gap-3 px-6 py-8 sm:px-10 lg:px-20 flex-1">
@@ -25,8 +25,10 @@ const hero = () => {
             into today's plan, and watch the week's work add up.
           </span>
         </p>
+      <div className='flex-col items-center'>
+<button className="btn btn-active btn-success bg-green-600 btn-md">Browse Workouts</button> </div>  
       </div>
-
+      
     
       <div className="w-full md:w-2/5 lg:w-1/3 lg:py-4">
         <Image
