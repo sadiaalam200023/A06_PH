@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import banner from "@/assets/banner.png"
+import Link from 'next/link';
 const hero = () => {
     
     return (
@@ -26,7 +27,8 @@ const hero = () => {
           </span>
         </p>
       <div className='flex-col items-center'>
-<button className="btn btn-active btn-success bg-green-600 btn-md">Browse Workouts</button> </div>  
+        <Link href="/#library">
+<button className="btn btn-active btn-success bg-green-600 btn-md">Browse Workouts</button> </Link></div>  
       </div>
       
     

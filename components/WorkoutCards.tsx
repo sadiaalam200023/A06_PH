@@ -2,6 +2,7 @@ import React from 'react';
 
 
 import Image from "next/image";
+import Link from 'next/link';
 
 interface Workout {
   id: number;
@@ -23,8 +24,10 @@ interface WorkoutCardProps {
   workout: Workout;
 }
 const WorkoutCards = ({workout}: WorkoutCardProps) => {
-    return (
-    <div className="card bg-[#15171D] shadow-md overflow-hidden">
+    return (  <Link href={`/workouts/${workout.id}`}>
+    <div className="card bg-[#15171D] shadow-md overflow-hidden  hover:-translate-y-1
+  hover:shadow-xl
+  hover:cursor-pointer">
       
      
       <figure className="h-52 w-full">
@@ -85,7 +88,7 @@ const WorkoutCards = ({workout}: WorkoutCardProps) => {
         </div>
 
       </div>
-    </div>
+    </div> </Link>
   );
 };
 
