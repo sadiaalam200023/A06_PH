@@ -24,7 +24,7 @@ interface WorkoutCardProps {
   workout: Workout;
 }
 const WorkoutCards = ({workout}: WorkoutCardProps) => {
-    return (  <Link href={`/workouts/${workout.id}`}>
+    return (  <Link href={`/Workout/${workout.id}`}>
     <div className="card bg-[#15171D] shadow-md overflow-hidden  hover:-translate-y-1
   hover:shadow-xl
   hover:cursor-pointer">
