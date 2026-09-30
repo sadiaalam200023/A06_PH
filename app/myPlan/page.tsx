@@ -65,6 +65,7 @@ const MyPlanPage = () => {
     setSaveWorkouts((current) =>
       current.filter((workout) => workout.id !== id)
     );
+    toast.info("Workout removed");
   };
 
   return (
