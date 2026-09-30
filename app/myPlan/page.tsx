@@ -1,5 +1,5 @@
 "use client";
-
+import { toast } from "react-toastify";
 import Link from "next/link";
 import Image from "next/image";
 import { useContext, useState } from "react";
@@ -56,6 +56,8 @@ const MyPlanPage = () => {
     setAddWorkouts((current) =>
       current.filter((workout) => workout.id !== id)
     );
+
+  toast.info("Workout removed");
   };
 
   

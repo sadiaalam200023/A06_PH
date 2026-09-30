@@ -1,5 +1,6 @@
 
 import WorkoutDetails from "@/components/WorkoutDetails";
+import { notFound } from "next/navigation";
 
 interface Workout {
    id: number;
@@ -43,7 +44,7 @@ interface Workout {
    );
 
    if (!workout) {
-     return <div>Workout not found</div>;
+     return notFound();
    }
 
    return <WorkoutDetails workout={workout} />;
