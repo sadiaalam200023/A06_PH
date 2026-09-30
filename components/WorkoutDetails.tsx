@@ -1,4 +1,6 @@
 import Image from "next/image";
+import AddtoButton from "./AddtoButton";
+import SaveButton from "./SaveButton";
 interface Workout {
   id: number;
   name: string;
@@ -46,7 +48,11 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
              <div className="grid grid-cols-2"> <div className="p-4 text-xs text-gray-500"> RATING </div> <div className="p-4 text-sm text-white"> ★ {workout.rating} </div> </div> </div> </div> 
            
            <div className="mt-4"> <h2 className="text-sm font-semibold text-green-500 mb-4"> INSTRUCTIONS </h2> <ol className="space-y-4"> {workout.instructions.map((instruction, index) => ( <li key={index} className="flex gap-4" > 
-             <span className=" flex-shrink-0 w-7 h-7 rounded-full bg-[#22252D] flex items-center justify-center text-xs text-green-500 " > {index + 1} </span><p className="text-sm text-gray-400 leading-relaxed"> {instruction} </p> </li> ))} </ol> </div> {/* BUTTONS */} <div className="flex flex-col sm:flex-row gap-3 mt-10"> <button className="btn btn-success flex-1"> + Add to today's plan </button> <button className="btn btn-outline flex-1"> 🔖 Save for later </button> </div> 
+             <span className=" flex-shrink-0 w-7 h-7 rounded-full bg-[#22252D] flex items-center justify-center text-xs text-green-500 " > {index + 1} </span><p className="text-sm text-gray-400 leading-relaxed"> {instruction} </p> </li> ))} </ol> </div> 
+             <div className="flex flex-col sm:flex-row gap-3 mt-10"> 
+              <AddtoButton workout = {workout}></AddtoButton>
+              <SaveButton workout={workout} />
+               </div> 
               </div> </div> 
               </div>
 

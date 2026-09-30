@@ -1,11 +1,22 @@
 "use client";
 import Link from 'next/link';
 import logo from "@/assets/logo.png"
-import React from 'react';
+
 import Image from 'next/image';
 
+
+import { useContext } from "react";
+import { workoutsContext } from "@/WorkoutProvider/WorkoutProvider";
+
 const Navbar = () => {
+    const workoutProvider = useContext(workoutsContext);
+
+  if (!workoutProvider) {
+    throw new Error("Navbar must be used inside WorkoutProvider");
+  }
+const { addWorkouts, saveWorkouts } = workoutProvider;
     return (
+     
 
 <div className="navbar bg-base-100 shadow-sm px-10 flex justify-between items-center">
   
@@ -45,19 +56,31 @@ const Navbar = () => {
       </Link>
 </li>
       <li>
-      <a className="btn btn-ghost btn-sm rounded-4xl normal-case text-base-content/70 hover:bg-base-200">My plans</a> </li>
+ <Link href="/myPlan">
+    My Plan
+  </Link> </li>
     </ul>
   </div>
 
   
   <div className="navbar-end flex gap-2">
-    <button className="btn btn-ghost">
-      Plan <div className="badge badge-sm bg-green-500">0</div>
-    </button>
+    <div>
+          <Link href="/myPlan" className="flex items-center gap-2">
+  Plan
+  <span className="badge badge-success">
+    {addWorkouts.length}
+  </span>
+</Link>
+        </div>
 
-    <button className="btn btn-ghost">
-      Saved <div className="badge badge-sm bg-gray-500 rounded-2xl">0</div>
-    </button>
+    <div>
+          <Link href="/myPlan" className="flex items-center gap-2">
+  Saved
+  <span className="badge badge-success">
+    {saveWorkouts.length}
+  </span>
+</Link>
+        </div>
   </div>
 
 </div>
